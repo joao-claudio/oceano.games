@@ -8,123 +8,238 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Alpine.js -->
-    <script src="//unpkg.com/alpinejs" defer></script>
-
     <style>
-        /* Fontes para os Títulos */
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
+        /* Estilos gerais */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Cabeçalho - Céu */
+        header {
+            height: 100vh;
+            background: linear-gradient(to bottom, #87CEEB, #ADD8E6); /* Azul Céu */
+            position: relative;
+        }
+
+        /* Corpo - Ondas em CSS */
+        .waves {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(to bottom, #39A9DB, #0074D9); /* Azul claro e oceânico */
+            clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0% 100%);
+        }
+
+        .wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.4); /* Cor de onda */
+            opacity: 0.5;
+            clip-path: polygon(0 80%, 100% 60%, 100% 100%, 0% 100%); /* Formato de onda */
+        }
+
+        /* Rodapé - Areia */
+        footer {
+            height: 100vh;
+            background: linear-gradient(to top, #F5DEB3, #FFCC5C); /* Tons de areia */
+            position: relative;
+        }
+
+        /* Texto e Centralização */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: white;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Seção Sobre usando Proporção Áurea */
+        .about {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            padding: 20px;
+            background-color: #0074D9; /* Azul oceânico */
+            color: white;
+        }
+
+        /* Divisão da Proporção Áurea */
+        .about-image {
+            width: 38.2%; /* Proporção áurea para a imagem */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .about-text {
+            width: 61.8%; /* Proporção áurea para o texto */
+            padding: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Seção de Jogos */
+        .games {
+            background-color: #001f3f; /* Fundo azul escuro */
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .games h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        .game-card {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 40px;
+        }
+
+        .game-card:nth-child(even) {
+            flex-direction: row-reverse; /* Alterna a posição de imagem e texto */
+        }
+
+        .game-image {
+            width: 38.2%; /* Proporção áurea */
+            padding: 20px;
+        }
+
+        .game-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .game-info {
+            width: 61.8%; /* Proporção áurea */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .game-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .game-info p {
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
     </style>
 </head>
-<body class="bg-blue-900 text-white">
+<body>
 
-    <!-- Cabeçalho -->
-    <header class="bg-blue-700 text-center py-8">
-        <h1 class="text-5xl font-bold">Oceano Games</h1>
-        <p class="text-lg mt-2">Waveworks - Som que muda o Jogo</p>
+    <!-- Cabeçalho - Céu -->
+    <header>
+        <div class="centered">
+            <h1>Oceano Games</h1>
+            <p>Waveworks - Onde o Som Define o Jogo</p>
+        </div>
     </header>
 
-    <!-- Seção Hero -->
-    <section class="relative h-screen bg-cover bg-center" style="background-image: url('path-to-your-background-image.jpg');">
-        <div class="absolute inset-0 bg-blue-900 bg-opacity-75 flex flex-col items-center justify-center text-center p-8">
-            <h2 class="text-4xl font-semibold mb-4">Criando Mundos Sonoros & de Aventura</h2>
-            <p class="max-w-2xl text-lg">Na Oceano Games, criamos experiências imersivas onde o som é o elemento condutor do gameplay. De puzzles relaxantes a mistérios empolgantes, convidamos você a explorar ondas de criatividade conosco.</p>
-            <a href="#games" class="mt-6 px-6 py-3 bg-green-500 text-white rounded-full text-lg hover:bg-green-400">Descubra Nossos Jogos</a>
+    <!-- Corpo - Ondas em CSS -->
+    <section class="waves">
+        <div class="wave"></div>
+        <div class="centered">
+            <h2>Bem-vindo ao Oceano Games</h2>
+            <p>Criando jogos onde o som é a essência</p>
         </div>
     </section>
 
-    <!-- Seção Sobre Nós -->
-    <section id="about" class="bg-blue-800 py-16 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold mb-6">Sobre a Oceano Games</h2>
-            <p class="text-lg leading-relaxed">A Oceano Games cria uma ponte entre o ritmo do oceano, a fluidez do som e preocupação com jogabilidade. Acreditamos em criar experiências onde o som é o elemento central que conduz o jogo.</p>
-            <p class="text-lg mt-4 leading-relaxed">Na Oceano Games, celebramos inclusão, criatividade e aventura.</p>
+    <!-- Seção Sobre com Proporção Áurea -->
+    <section class="about">
+        <!-- Imagem à Esquerda -->
+        <div class="about-image">
+            <img src="images/oceano-team.jpg" alt="Equipe Oceano Games">
         </div>
-    </section>
-
-    <!-- Seção Jogos -->
-    <section id="games" class="py-16 bg-blue-900 text-center">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12">Nossos Jogos em Desenvolvimento</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <!-- Jogo 1 - The Hitmaker -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">The Hitmaker</h3>
-                    <p><b>The Hitmaker</b> coloca você no papel de um produtor musical, gerenciando um estúdio de gravação. O jogador deve contratar músicos, coordenar sessões de gravação e criar faixas únicas. Cada decisão influencia o resultado final das músicas e o sucesso do estúdio.</p>
-                </div>
-
-                <!-- Jogo 2 - Patches -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">Patches</h3>
-                    <p>Inspirado por sintetizadores modulares, <b>Patches</b> é um puzzle onde o jogador deve conectar circuitos de som para criar padrões musicais. O objetivo é manipular ondas sonoras e sinais para resolver desafios e harmonizar a trilha sonora do jogo.</p>
-                </div>
-
-                <!-- Jogo 3 - Runegarden -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">Runegarden</h3>
-                    <p>Em <b>Runegarden</b>, os jogadores encontram um puzzle minimalista, zen e relaxante, onde o som é a chave para solucionar cada fase. O jogador coloca <b>runas</b> em um grid, criando harmonia para avançar no jogo.</p>
-                </div>
-
-                <!-- Jogo 4 - Marble Machines -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">Marble Machines</h3>
-                    <p>Inspirado pela famosa <b>Marble Machine</b>, este jogo combina elementos de física e música. O jogador alinha peças em um grid, e cada peça representa um trecho musical, criando uma experiência interativa de lógica e ritmo musical.</p>
-                </div>
-
-                <!-- Jogo 5 - The Jazzclub -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">The Jazzclub</h3>
-                    <p>Um crime aconteceu em um clube de jazz. Em <b>The Jazzclub</b>, o jogador investiga usando sons para encontrar pistas. A exploração sonora é a chave para resolver o mistério nesse jogo de aventura em 2D com clima noir.</p>
-                </div>
-
-                <!-- Jogo 6 - Mix n Match -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">Mix n Match</h3>
-                    <p><b>Mix n' Match</b> é um puzzle musical onde o jogador alinha instrumentos em um grid para criar a mixagem perfeita. Usando mecânicas de match e merge, o jogador deve harmonizar as faixas musicais.</p>
-                </div>
-
-                <!-- Jogo 7 - Gearbox -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">Gearbox</h3>
-                    <p>Em <b>Gearbox</b>, o jogador manipula engrenagens e peças em um grid para reproduzir o som correto. O desafio é montar corretamente o mecanismo musical para que ele toque perfeitamente.</p>
-                </div>
-
-                <!-- Jogo 8 - The Cube -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">The Cube</h3>
-                    <p>Inspirado no cubo mágico e no jogo Genius, <b>The Cube</b> é um puzzle sonoro onde o jogador gira as peças para recriar a melodia correta, usando uma mecânica retrô dos anos 80.</p>
-                </div>
-
-                <!-- Jogo 9 - Patches: Synthflow -->
-                <div class="bg-blue-800 p-8 rounded-lg hover:shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-4">Patches: Synthflow</h3>
-                    <p>Uma versão alternativa de <b>Patches</b>, com foco no fluxo de sinais sonoros. Em <b>Synthflow</b>, o jogador conecta patch cables para explorar combinações de ondas e efeitos sonoros, criando uma experiência técnica e musical profunda.</p>
-                </div>
-
+        
+        <!-- Texto à Direita -->
+        <div class="about-text">
+            <div>
+                <h2>Sobre a Oceano Games</h2>
+                <p>A Oceano Games é um estúdio focado em criar experiências imersivas onde o som é o guia central do jogo. Nossa missão é trazer a fluidez do oceano e a profundidade do som para cada título que desenvolvemos, proporcionando uma jornada única para cada jogador. Com uma equipe apaixonada por som e design, desenvolvemos mundos variados que vão de momentos relaxantes a aventuras intensas.</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção Comunidade -->
-    <section id="community" class="bg-blue-800 py-16 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold mb-6">Junte-se à Nossa Comunidade</h2>
-            <p class="text-lg leading-relaxed mb-6">Acreditamos em compartilhar nossa jornada e ferramentas com a comunidade de desenvolvimento de jogos. Acompanhe nossas atualizações de desenvolvimento ou contribua com nossas ferramentas open source para a criação de experiências imersivas de áudio.</p>
-            <a href="#" class="px-6 py-3 bg-green-500 text-white rounded-full text-lg hover:bg-green-400">Contribua no GitHub</a>
+    <!-- Seção de Jogos -->
+    <section class="games">
+        <h2>Nossos Jogos</h2>
+
+        <!-- Jogo 1 -->
+        <div class="game-card">
+            <div class="game-image">
+                <img src="images/the-hitmaker.jpg" alt="The Hitmaker">
+            </div>
+            <div class="game-info">
+                <h3>The Hitmaker</h3>
+                <p>Assuma o papel de um produtor musical. Contrate músicos, gerencie gravações e crie faixas de sucesso neste jogo de gestão musical.</p>
+            </div>
+        </div>
+
+        <!-- Jogo 2 -->
+        <div class="game-card">
+            <div class="game-image">
+                <img src="images/patches.jpg" alt="Patches">
+            </div>
+            <div class="game-info">
+                <h3>Patches</h3>
+                <p>Um jogo de puzzle inspirado em sintetizadores modulares. Conecte patches de som, molde a música e domine a arte do fluxo sonoro.</p>
+            </div>
+        </div>
+
+        <!-- Jogo 3 -->
+        <div class="game-card">
+            <div class="game-image">
+                <img src="images/runegarden.jpg" alt="Runegarden">
+            </div>
+            <div class="game-info">
+                <h3>Runegarden</h3>
+                <p>Um puzzle minimalista onde música e jogabilidade se unem. Coloque runas no grid e crie harmonia através do som.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer class="bg-blue-700 py-8 text-center">
-        <p>© 2024 Oceano Games | Waveworks</p>
-        <p>Siga-nos: 
-            <a href="#" class="text-green-300 hover:text-green-200">Twitter</a> | 
-            <a href="#" class="text-green-300 hover:text-green-200">Instagram</a> | 
-            <a href="#" class="text-green-300 hover:text-green-200">GitHub</a>
-        </p>
+    <!-- Rodapé - Areia -->
+    <footer>
+        <div class="centered">
+            <p>© 2024 Oceano Games | Waveworks</p>
+        </div>
     </footer>
 
 </body>
