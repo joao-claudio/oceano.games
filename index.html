@@ -8,17 +8,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-        
-        .polaroid {
-            border: 10px solid white; /* Cria a margem branca ao redor */
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
-            padding: 20px 10px 40px; /* Simula o espaço maior na parte inferior, como nas Polaroids */
-            background-color: white; /* Fundo branco dentro da borda */
-            display: inline-block; /* Garante que o elemento se comporte como uma imagem */
-            transform: rotate(-15deg); /* Leve rotação anti-horária para o efeito despojado */
-        }
-        
+    <style>    
         /* Estilos gerais */
         body, html {
             margin: 0;
@@ -89,6 +79,15 @@
             color: white;
         }
 
+        .polaroid {
+            border: 10px solid white; /* Cria a margem branca ao redor */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+            padding: 20px 10px 40px; /* Simula o espaço maior na parte inferior, como nas Polaroids */
+            background-color: white; /* Fundo branco dentro da borda */
+            display: inline-block; /* Garante que o elemento se comporte como uma imagem */
+            transform: rotate(-15deg); /* Leve rotação anti-horária para o efeito despojado */
+        }
+        
         /* Divisão da Proporção Áurea */
         .about-image {
             width: 38.2%; /* Proporção áurea para a imagem */
@@ -100,7 +99,7 @@
         .about-image img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
+        /*  border-radius: 10px;
         }
 
         .about-text {
@@ -194,7 +193,7 @@
     <!-- Seção Sobre com Proporção Áurea -->
     <section class="about">
         <!-- Imagem à Esquerda -->
-        <div class="polaroid"> <!-- <div class="about-image"> -->
+        <div class="about-image polaroid"> <!-- <div class="about-image"> -->
             <img src="images/avatar.png" alt="Equipe Oceano Games">
         </div>
         
