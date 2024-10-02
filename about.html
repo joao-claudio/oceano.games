@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceano Games - Waveworks</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Estilos gerais */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Cabeçalho - Céu */
+        header {
+            height: 100vh;
+            background: linear-gradient(to bottom, #87CEEB, #ADD8E6); /* Azul Céu */
+            position: relative;
+        }
+
+        /* Corpo - Mar com Parallax */
+        .parallax {
+            height: 200vh; /* Altura extra para testar o scroll */
+            background: url('path-to-your-water-texture.jpg') repeat-x;
+            background-size: cover;
+            position: relative;
+            animation: moveWaves 10s linear infinite; /* Animação de ondas */
+        }
+
+        /* Animação de movimento de ondas */
+        @keyframes moveWaves {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1000px 0;
+            }
+        }
+
+        /* Rodapé - Areia */
+        footer {
+            height: 100vh;
+            background: linear-gradient(to top, #F5DEB3, #FFCC5C); /* Tons de areia */
+            position: relative;
+        }
+
+        /* Texto e Centralização */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: white;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho - Céu -->
+    <header>
+        <div class="centered">
+            <h1>Oceano Games</h1>
+            <p>Waveworks - Onde o Som Define o Jogo</p>
+        </div>
+    </header>
+
+    <!-- Corpo - Mar com Animação Parallax -->
+    <div class="parallax"></div>
+
+    <!-- Rodapé - Areia -->
+    <footer>
+        <div class="centered">
+            <p>© 2024 Oceano Games | Waveworks</p>
+        </div>
+    </footer>
+
+</body>
+</html>
